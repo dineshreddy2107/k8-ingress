@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: app1
+  name: app2
   # deployment labels
   labels:
     purpose: ingress
@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: dineshreddy11/app1:v1
+        image: dineshreddy11/app2:v1
 ---
 apiVersion: v1
 kind: Service
