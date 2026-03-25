@@ -46,13 +46,14 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-wildcard-host
+  name: app1
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:315949462026:certificate/b04a0383-deea-4e4c-adcd-4a3caa77e426
     alb.ingress.kubernetes.io/scheme: internet-facing 
     alb.ingress.kubernetes.io/target-type: ip
 spec:
+  ingressClassName: alb
   rules:
   - host: "app1.vinnimakeovers.online"
     http:
